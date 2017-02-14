@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/Pr1/" name="Pr1" targetNamespace="http://www.example.org/Pr1/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/Pr1/">
+      <xsd:element name="ValidarNIF">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="nif" type="xsd:string" />
+            <xsd:element name="SoapKey" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ValidarNIFResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ValidarIBAN">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="iban" type="xsd:string" />
+            <xsd:element name="SoapKey" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ValidarIBANResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ValidarNIFRequest">
+    <wsdl:part name="parameters" element="tns:ValidarNIF" />
+  </wsdl:message>
+  <wsdl:message name="ValidarIBANRequest">
+    <wsdl:part name="parameters" element="tns:ValidarIBAN" />
+  </wsdl:message>
+  <wsdl:message name="ValidarIBANResponse">
+    <wsdl:part name="parameters" element="tns:ValidarIBANResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidarNIFResponse">
+    <wsdl:part name="parameters" element="tns:ValidarNIFResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Pr1">
+    <wsdl:operation name="ValidarNIF">
+      <wsdl:input message="tns:ValidarNIFRequest" />
+      <wsdl:output message="tns:ValidarNIFResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidarIBAN">
+      <wsdl:input message="tns:ValidarIBANRequest" />
+      <wsdl:output message="tns:ValidarIBANResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Pr1SOAP" type="tns:Pr1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ValidarNIF">
+      <soap:operation soapAction="http://www.example.org/Pr1/ValidarNIF" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Pr1">
+    <wsdl:port name="Pr1SOAP" binding="tns:Pr1SOAP">
+      <soap:address location="http://localhost:8080/Pr1/services/Pr1/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

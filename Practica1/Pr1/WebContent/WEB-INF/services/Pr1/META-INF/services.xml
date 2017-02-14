@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.6.3  Built on : Jun 27, 2015 (11:17:49 BST) --><serviceGroup>
+    <service name="Pr1">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.example.www.pr1.Pr1MessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.example.www.pr1.Pr1Skeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="generarPresupuesto" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/Pr1/">
+            <actionMapping>http://www.example.org/Pr1/generarPresupuesto</actionMapping>
+            <outputActionMapping>http://www.example.org/Pr1/Pr1/generarPresupuestoResponse</outputActionMapping>
+        </operation>
+        <operation name="ValidarIBAN" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/Pr1/">
+            <actionMapping>http://www.example.org/Pr1/ValidarIBAN</actionMapping>
+            <outputActionMapping>http://www.example.org/Pr1/Pr1/ValidarIBANResponse</outputActionMapping>
+        </operation>
+        <operation name="solicitarPresupuesto" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/Pr1/">
+            <actionMapping>http://www.example.org/Pr1/solicitarPresupuesto</actionMapping>
+            <outputActionMapping>http://www.example.org/Pr1/Pr1/solicitarPresupuestoResponse</outputActionMapping>
+        </operation>
+        <operation name="ValidarNIF" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/Pr1/">
+            <actionMapping>http://www.example.org/Pr1/ValidarNIF</actionMapping>
+            <outputActionMapping>http://www.example.org/Pr1/Pr1/ValidarNIFResponse</outputActionMapping>
+        </operation>
+        <operation name="consultaCodigoPostal" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://www.example.org/Pr1/">
+            <actionMapping>http://www.example.org/Pr1/consultaCodigoPostal</actionMapping>
+            <outputActionMapping>http://www.example.org/Pr1/Pr1/consultaCodigoPostalResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>
