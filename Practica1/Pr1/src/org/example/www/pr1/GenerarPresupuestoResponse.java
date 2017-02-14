@@ -26,30 +26,60 @@
             
 
                         /**
-                        * field for Out
+                        * field for IdPresupuesto
                         */
 
                         
-                                    protected java.lang.String localOut ;
+                                    protected int localIdPresupuesto ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String
+                           * @return int
                            */
-                           public  java.lang.String getOut(){
-                               return localOut;
+                           public  int getIdPresupuesto(){
+                               return localIdPresupuesto;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Out
+                               * @param param IdPresupuesto
                                */
-                               public void setOut(java.lang.String param){
+                               public void setIdPresupuesto(int param){
                             
-                                            this.localOut=param;
+                                            this.localIdPresupuesto=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for PresupuestoGeneradoCorrectamente
+                        */
+
+                        
+                                    protected boolean localPresupuestoGeneradoCorrectamente ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getPresupuestoGeneradoCorrectamente(){
+                               return localPresupuestoGeneradoCorrectamente;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param PresupuestoGeneradoCorrectamente
+                               */
+                               public void setPresupuestoGeneradoCorrectamente(boolean param){
+                            
+                                            this.localPresupuestoGeneradoCorrectamente=param;
                                        
 
                                }
@@ -115,20 +145,28 @@
                    }
                
                                     namespace = "";
-                                    writeStartElement(null, namespace, "out", xmlWriter);
+                                    writeStartElement(null, namespace, "idPresupuesto", xmlWriter);
                              
-
-                                          if (localOut==null){
-                                              // write the nil attribute
-                                              
-                                                     throw new org.apache.axis2.databinding.ADBException("out cannot be null!!");
-                                                  
-                                          }else{
-
-                                        
-                                                   xmlWriter.writeCharacters(localOut);
-                                            
-                                          }
+                                               if (localIdPresupuesto==java.lang.Integer.MIN_VALUE) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("idPresupuesto cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIdPresupuesto));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "presupuestoGeneradoCorrectamente", xmlWriter);
+                             
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("presupuestoGeneradoCorrectamente cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPresupuestoGeneradoCorrectamente));
+                                               }
                                     
                                    xmlWriter.writeEndElement();
                              
@@ -318,14 +356,17 @@
 
                 
                                       elementList.add(new javax.xml.namespace.QName("",
-                                                                      "out"));
+                                                                      "idPresupuesto"));
                                  
-                                        if (localOut != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOut));
-                                        } else {
-                                           throw new org.apache.axis2.databinding.ADBException("out cannot be null!!");
-                                        }
-                                    
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localIdPresupuesto));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "presupuestoGeneradoCorrectamente"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPresupuestoGeneradoCorrectamente));
+                            
 
                 return new org.apache.axis2.databinding.utils.reader.ADBXMLStreamReaderImpl(qName, elementList.toArray(), attribList.toArray());
             
@@ -404,18 +445,43 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","out").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","idPresupuesto").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"out" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"idPresupuesto" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setOut(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              object.setIdPresupuesto(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToInt(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","presupuestoGeneradoCorrectamente").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"presupuestoGeneradoCorrectamente" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setPresupuestoGeneradoCorrectamente(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
                                               
                                         reader.next();
                                     

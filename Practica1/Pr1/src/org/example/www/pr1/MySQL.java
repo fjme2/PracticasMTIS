@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 public class MySQL {
  
     private static Connection Conexion;
+
  
     public void MySQLConnection(String user, String pass, String db_name) {
         try {
@@ -106,6 +107,7 @@ public class MySQL {
         }
     }
     
+  //compara la key pasada con las que hay en la BD
     public boolean comparegetKey(String key){
     	boolean encontrado=false;
     	try {
@@ -125,6 +127,34 @@ public class MySQL {
         JOptionPane.showMessageDialog(null, "Error en la adquisición de datos");
         }
     	return encontrado;
+    }
+    
+    public ConsultaCodigoPostalResponse devolverCodPos(String codpos){
+    	ConsultaCodigoPostalResponse resul = new ConsultaCodigoPostalResponse();
+    	String valor="";
+    	boolean encontrado=false;
+    	try {
+    		String Query = "SELECT * FROM codigospostales";
+    		Statement st = Conexion.createStatement();
+    		java.sql.ResultSet resultSet;
+    		resultSet = st.executeQuery(Query);
+    		
+    		while (resultSet.next() && encontrado==false) {
+    			if(Objects.equals(codpos,resultSet.getString("codigoPostal"))){
+    				resul.setCodigoPostal(codpos);
+    	    		resul.setPoblacion(resultSet.getString("poblacion"));
+    	    		resul.setProvincia(resultSet.getString("provincia"));
+    	    		encontrado= true;
+    			}
+    		}
+    		
+    		
+
+    	}catch (SQLException ex) {
+    		JOptionPane.showMessageDialog(null, "Error en la adquisición de datos");
+        }
+    	
+    	return resul;
     }
  
 }

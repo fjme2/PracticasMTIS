@@ -74,7 +74,8 @@
       	<xsd:complexType>
       		<xsd:sequence>
 
-      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      			<xsd:element name="idPresupuesto" type="xsd:int"></xsd:element>
+      			<xsd:element name="presupuestoGeneradoCorrectamente" type="xsd:boolean"></xsd:element>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>
@@ -94,7 +95,11 @@
       	<xsd:complexType>
       		<xsd:sequence>
 
-      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      			<xsd:element name="precioPieza" type="xsd:float"></xsd:element>
+      			<xsd:element name="disponibilidadPieza"
+      				type="xsd:boolean">
+      			</xsd:element>
+      			<xsd:element name="fechaDisponibilidadPieza" type="xsd:date"></xsd:element>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>
@@ -183,32 +188,41 @@
   		</wsdl:output>
   	</wsdl:operation>
   	<wsdl:operation name="consultaCodigoPostal">
+
   		<soap:operation
   			soapAction="http://www.example.org/Pr1/consultaCodigoPostal" />
   		<wsdl:input>
+
   			<soap:body use="literal" />
   		</wsdl:input>
   		<wsdl:output>
+
   			<soap:body use="literal" />
   		</wsdl:output>
   	</wsdl:operation>
   	<wsdl:operation name="generarPresupuesto">
+
   		<soap:operation
   			soapAction="http://www.example.org/Pr1/generarPresupuesto" />
   		<wsdl:input>
+
   			<soap:body use="literal" />
   		</wsdl:input>
   		<wsdl:output>
+
   			<soap:body use="literal" />
   		</wsdl:output>
   	</wsdl:operation>
   	<wsdl:operation name="solicitarPresupuesto">
+
   		<soap:operation
   			soapAction="http://www.example.org/Pr1/solicitarPresupuesto" />
   		<wsdl:input>
+
   			<soap:body use="literal" />
   		</wsdl:input>
   		<wsdl:output>
+
   			<soap:body use="literal" />
   		</wsdl:output>
   	</wsdl:operation>

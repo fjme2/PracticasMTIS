@@ -72,7 +72,8 @@
       	<xsd:complexType>
       		<xsd:sequence>
 
-      			<xsd:element name="out" type="xsd:string"/>
+      			<xsd:element name="idPresupuesto" type="xsd:int"/>
+      			<xsd:element name="presupuestoGeneradoCorrectamente" type="xsd:boolean"/>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>
@@ -91,7 +92,10 @@
       	<xsd:complexType>
       		<xsd:sequence>
 
-      			<xsd:element name="out" type="xsd:string"/>
+      			<xsd:element name="precioPieza" type="xsd:float"/>
+      			<xsd:element name="disponibilidadPieza" type="xsd:boolean">
+      			</xsd:element>
+      			<xsd:element name="fechaDisponibilidadPieza" type="xsd:date"/>
       		</xsd:sequence>
       	</xsd:complexType>
       </xsd:element>

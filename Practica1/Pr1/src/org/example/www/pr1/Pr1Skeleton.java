@@ -117,25 +117,25 @@ public class Pr1Skeleton {
 
 	public org.example.www.pr1.ConsultaCodigoPostalResponse consultaCodigoPostal(
 			org.example.www.pr1.ConsultaCodigoPostal consultaCodigoPostal) {
-		ConsultaCodigoPostalResponse resul = new ConsultaCodigoPostalResponse();
-		MySQL conectar = new MySQL();
-		conectar.MySQLConnection(user, pass, db_name);
-
-		return resul;
-	}
-	
-	//compara la key pasada con las que hay en la BD
-	public boolean keys(String key){
-		MySQL conectar = new MySQL();
-		boolean error = false;
+		ConsultaCodigoPostalResponse datos = new ConsultaCodigoPostalResponse();
 		try{
+			MySQL conectar = new MySQL();
 			conectar.MySQLConnection(user, pass, db_name);
-			return conectar.comparegetKey(key);
+			if(conectar.comparegetKey(consultaCodigoPostal.getSoapKey())==true){
+				return conectar.devolverCodPos(consultaCodigoPostal.getCodpos());
+			}else{
+				datos.setCodigoPostal(consultaCodigoPostal.getCodpos());
+				datos.setPoblacion("Key incorrecta!");
+				datos.setProvincia("Key incorrecta!");
+				return datos;
+			}
 		}catch(Exception ex){
-			return error; 
-		}
-
+			datos.setCodigoPostal(consultaCodigoPostal.getCodpos());
+			datos.setPoblacion("ERROR!");
+			datos.setProvincia("ERROR!");
+			return datos;
+		}	
 	}
-
 
 }
+    

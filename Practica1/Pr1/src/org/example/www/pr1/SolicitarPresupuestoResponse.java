@@ -26,30 +26,90 @@
             
 
                         /**
-                        * field for Out
+                        * field for PrecioPieza
                         */
 
                         
-                                    protected java.lang.String localOut ;
+                                    protected float localPrecioPieza ;
                                 
 
                            /**
                            * Auto generated getter method
-                           * @return java.lang.String
+                           * @return float
                            */
-                           public  java.lang.String getOut(){
-                               return localOut;
+                           public  float getPrecioPieza(){
+                               return localPrecioPieza;
                            }
 
                            
                         
                             /**
                                * Auto generated setter method
-                               * @param param Out
+                               * @param param PrecioPieza
                                */
-                               public void setOut(java.lang.String param){
+                               public void setPrecioPieza(float param){
                             
-                                            this.localOut=param;
+                                            this.localPrecioPieza=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for DisponibilidadPieza
+                        */
+
+                        
+                                    protected boolean localDisponibilidadPieza ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return boolean
+                           */
+                           public  boolean getDisponibilidadPieza(){
+                               return localDisponibilidadPieza;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param DisponibilidadPieza
+                               */
+                               public void setDisponibilidadPieza(boolean param){
+                            
+                                            this.localDisponibilidadPieza=param;
+                                       
+
+                               }
+                            
+
+                        /**
+                        * field for FechaDisponibilidadPieza
+                        */
+
+                        
+                                    protected java.util.Date localFechaDisponibilidadPieza ;
+                                
+
+                           /**
+                           * Auto generated getter method
+                           * @return java.util.Date
+                           */
+                           public  java.util.Date getFechaDisponibilidadPieza(){
+                               return localFechaDisponibilidadPieza;
+                           }
+
+                           
+                        
+                            /**
+                               * Auto generated setter method
+                               * @param param FechaDisponibilidadPieza
+                               */
+                               public void setFechaDisponibilidadPieza(java.util.Date param){
+                            
+                                            this.localFechaDisponibilidadPieza=param;
                                        
 
                                }
@@ -115,18 +175,44 @@
                    }
                
                                     namespace = "";
-                                    writeStartElement(null, namespace, "out", xmlWriter);
+                                    writeStartElement(null, namespace, "precioPieza", xmlWriter);
+                             
+                                               if (java.lang.Float.isNaN(localPrecioPieza)) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("precioPieza cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPrecioPieza));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "disponibilidadPieza", xmlWriter);
+                             
+                                               if (false) {
+                                           
+                                                         throw new org.apache.axis2.databinding.ADBException("disponibilidadPieza cannot be null!!");
+                                                      
+                                               } else {
+                                                    xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDisponibilidadPieza));
+                                               }
+                                    
+                                   xmlWriter.writeEndElement();
+                             
+                                    namespace = "";
+                                    writeStartElement(null, namespace, "fechaDisponibilidadPieza", xmlWriter);
                              
 
-                                          if (localOut==null){
+                                          if (localFechaDisponibilidadPieza==null){
                                               // write the nil attribute
                                               
-                                                     throw new org.apache.axis2.databinding.ADBException("out cannot be null!!");
+                                                     throw new org.apache.axis2.databinding.ADBException("fechaDisponibilidadPieza cannot be null!!");
                                                   
                                           }else{
 
                                         
-                                                   xmlWriter.writeCharacters(localOut);
+                                                   xmlWriter.writeCharacters(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFechaDisponibilidadPieza));
                                             
                                           }
                                     
@@ -318,12 +404,24 @@
 
                 
                                       elementList.add(new javax.xml.namespace.QName("",
-                                                                      "out"));
+                                                                      "precioPieza"));
                                  
-                                        if (localOut != null){
-                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localOut));
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localPrecioPieza));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "disponibilidadPieza"));
+                                 
+                                elementList.add(
+                                   org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localDisponibilidadPieza));
+                            
+                                      elementList.add(new javax.xml.namespace.QName("",
+                                                                      "fechaDisponibilidadPieza"));
+                                 
+                                        if (localFechaDisponibilidadPieza != null){
+                                            elementList.add(org.apache.axis2.databinding.utils.ConverterUtil.convertToString(localFechaDisponibilidadPieza));
                                         } else {
-                                           throw new org.apache.axis2.databinding.ADBException("out cannot be null!!");
+                                           throw new org.apache.axis2.databinding.ADBException("fechaDisponibilidadPieza cannot be null!!");
                                         }
                                     
 
@@ -404,18 +502,68 @@
                                     
                                     while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
                                 
-                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","out").equals(reader.getName())){
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","precioPieza").equals(reader.getName())){
                                 
                                     nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
                                     if ("true".equals(nillableValue) || "1".equals(nillableValue)){
-                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"out" +"  cannot be null");
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"precioPieza" +"  cannot be null");
                                     }
                                     
 
                                     java.lang.String content = reader.getElementText();
                                     
-                                              object.setOut(
-                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToString(content));
+                                              object.setPrecioPieza(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToFloat(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","disponibilidadPieza").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"disponibilidadPieza" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setDisponibilidadPieza(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToBoolean(content));
+                                              
+                                        reader.next();
+                                    
+                              }  // End of if for expected property start element
+                                
+                                else{
+                                    // A start element we are not expecting indicates an invalid parameter was passed
+                                    throw new org.apache.axis2.databinding.ADBException("Unexpected subelement " + reader.getName());
+                                }
+                            
+                                    
+                                    while (!reader.isStartElement() && !reader.isEndElement()) reader.next();
+                                
+                                    if (reader.isStartElement() && new javax.xml.namespace.QName("","fechaDisponibilidadPieza").equals(reader.getName())){
+                                
+                                    nillableValue = reader.getAttributeValue("http://www.w3.org/2001/XMLSchema-instance","nil");
+                                    if ("true".equals(nillableValue) || "1".equals(nillableValue)){
+                                        throw new org.apache.axis2.databinding.ADBException("The element: "+"fechaDisponibilidadPieza" +"  cannot be null");
+                                    }
+                                    
+
+                                    java.lang.String content = reader.getElementText();
+                                    
+                                              object.setFechaDisponibilidadPieza(
+                                                    org.apache.axis2.databinding.utils.ConverterUtil.convertToDate(content));
                                               
                                         reader.next();
                                     
