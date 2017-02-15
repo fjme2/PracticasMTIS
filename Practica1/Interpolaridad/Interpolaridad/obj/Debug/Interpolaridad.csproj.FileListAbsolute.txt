@@ -1,0 +1,9 @@
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\bin\Debug\Interpolaridad.exe.config
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\bin\Debug\Interpolaridad.exe
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\bin\Debug\Interpolaridad.pdb
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.csprojResolveAssemblyReference.cache
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.Form1.resources
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.Properties.Resources.resources
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.csproj.GenerateResource.Cache
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.exe
+c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.pdb
