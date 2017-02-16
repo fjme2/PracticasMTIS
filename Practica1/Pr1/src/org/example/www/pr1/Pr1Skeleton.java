@@ -25,9 +25,25 @@ public class Pr1Skeleton {
 
 	public org.example.www.pr1.GenerarPresupuestoResponse generarPresupuesto(
 			org.example.www.pr1.GenerarPresupuesto generarPresupuesto) {
-		// TODO : fill this with the necessary business logic
-		throw new java.lang.UnsupportedOperationException(
-				"Please implement " + this.getClass().getName() + "#generarPresupuesto");
+		GenerarPresupuestoResponse presu = new GenerarPresupuestoResponse();
+		try{
+			MySQL conectar = new MySQL();
+			conectar.MySQLConnection(user, pass, db_name);
+			if(conectar.comparegetKey(generarPresupuesto.getSoapKey())==true){
+				try{
+					conectar.insertarPresupuesto(generarPresupuesto);
+					presu.setIdPresupuesto(conectar.devolverID(generarPresupuesto));
+					presu.setPresupuestoGeneradoCorrectamente(true);
+				}catch(Exception es){
+					presu.setPresupuestoGeneradoCorrectamente(false);
+				}	
+			}else{
+				presu.setPresupuestoGeneradoCorrectamente(false);
+			}
+		}catch(Exception ex){
+			presu.setPresupuestoGeneradoCorrectamente(false);
+		}
+				return presu;
 	}
 
 	/**

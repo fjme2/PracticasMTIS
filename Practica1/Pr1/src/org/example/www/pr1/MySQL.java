@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.Objects;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -155,6 +156,47 @@ public class MySQL {
         }
     	
     	return resul;
+    }
+    
+    public void insertarPresupuesto(org.example.www.pr1.GenerarPresupuesto generarPresupuesto){
+    	String DATE_FORMAT = "yyyy-MM-dd";
+		SimpleDateFormat sdf = new SimpleDateFormat(DATE_FORMAT);
+		String fechaFormateada = sdf.format(generarPresupuesto.getFechaPresupuesto());
+    	String Query = "INSERT INTO presupuestos (fechaPresupuesto,idcliente,referenciaProducto,"
+    			+ "cantidadProducto) VALUES("
+    	       		 + "\"" + fechaFormateada + "\", "
+    	                + generarPresupuesto.getId() + ", "
+    	                + "\"" + generarPresupuesto.getReferenciaProducto() + "\", "
+    	                + generarPresupuesto.getCantidadProducto() + ")";
+    	 try {   
+             Statement st = Conexion.createStatement();
+             st.executeUpdate(Query);
+             JOptionPane.showMessageDialog(null, "Datos almacenados de forma exitosa");
+         } catch (SQLException ex) {
+        	 JOptionPane.showMessageDialog(null, ex);
+             JOptionPane.showMessageDialog(null, "Error en el almacenamiento de datos");
+
+         }
+    }
+    
+    public int devolverID(org.example.www.pr1.GenerarPresupuesto generarPresupuesto){
+    	int id=0;
+    	String valor="";
+    	try {
+    		String Query = "SELECT id FROM presupuestos";
+    		Statement st = Conexion.createStatement();
+    		java.sql.ResultSet resultSet;
+    		resultSet = st.executeQuery(Query);
+    		
+    		while (resultSet.next()) {
+    			id=resultSet.getInt("id");
+    		}
+    		
+    	}catch (SQLException ex) {
+    		JOptionPane.showMessageDialog(null, "Error en la adquisición de datos");
+        }
+
+    	return id;
     }
  
 }

@@ -42,10 +42,18 @@
             this.txtcodpos = new System.Windows.Forms.TextBox();
             this.txtcodposkey = new System.Windows.Forms.TextBox();
             this.Generar = new System.Windows.Forms.TabPage();
+            this.lblid = new System.Windows.Forms.Label();
+            this.butgen = new System.Windows.Forms.Button();
+            this.txtcant = new System.Windows.Forms.TextBox();
+            this.txtref = new System.Windows.Forms.TextBox();
+            this.txtgenkey = new System.Windows.Forms.TextBox();
             this.Solicitar = new System.Windows.Forms.TabPage();
+            this.txtcli = new System.Windows.Forms.TextBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.DNI.SuspendLayout();
             this.CodPos.SuspendLayout();
+            this.Generar.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -186,11 +194,63 @@
             // Generar
             // 
             this.Generar.BackColor = System.Drawing.Color.SteelBlue;
+            this.Generar.Controls.Add(this.dateTimePicker1);
+            this.Generar.Controls.Add(this.txtcli);
+            this.Generar.Controls.Add(this.lblid);
+            this.Generar.Controls.Add(this.butgen);
+            this.Generar.Controls.Add(this.txtcant);
+            this.Generar.Controls.Add(this.txtref);
+            this.Generar.Controls.Add(this.txtgenkey);
             this.Generar.Location = new System.Drawing.Point(4, 22);
             this.Generar.Name = "Generar";
             this.Generar.Size = new System.Drawing.Size(449, 269);
             this.Generar.TabIndex = 3;
             this.Generar.Text = "Generar";
+            // 
+            // lblid
+            // 
+            this.lblid.AutoSize = true;
+            this.lblid.Location = new System.Drawing.Point(204, 146);
+            this.lblid.Name = "lblid";
+            this.lblid.Size = new System.Drawing.Size(18, 13);
+            this.lblid.TabIndex = 9;
+            this.lblid.Text = "ID";
+            // 
+            // butgen
+            // 
+            this.butgen.Location = new System.Drawing.Point(72, 139);
+            this.butgen.Name = "butgen";
+            this.butgen.Size = new System.Drawing.Size(81, 20);
+            this.butgen.TabIndex = 8;
+            this.butgen.Text = "Enviar";
+            this.butgen.UseVisualStyleBackColor = true;
+            this.butgen.Click += new System.EventHandler(this.butgen_Click);
+            // 
+            // txtcant
+            // 
+            this.txtcant.Location = new System.Drawing.Point(228, 98);
+            this.txtcant.Name = "txtcant";
+            this.txtcant.Size = new System.Drawing.Size(52, 20);
+            this.txtcant.TabIndex = 7;
+            this.txtcant.Text = "Cantidad";
+            // 
+            // txtref
+            // 
+            this.txtref.Location = new System.Drawing.Point(72, 74);
+            this.txtref.Name = "txtref";
+            this.txtref.Size = new System.Drawing.Size(295, 20);
+            this.txtref.TabIndex = 6;
+            this.txtref.Text = "Referencia";
+            this.txtref.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtgenkey
+            // 
+            this.txtgenkey.Location = new System.Drawing.Point(72, 48);
+            this.txtgenkey.Name = "txtgenkey";
+            this.txtgenkey.Size = new System.Drawing.Size(295, 20);
+            this.txtgenkey.TabIndex = 2;
+            this.txtgenkey.Text = "Key";
+            this.txtgenkey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Solicitar
             // 
@@ -200,6 +260,23 @@
             this.Solicitar.Size = new System.Drawing.Size(449, 269);
             this.Solicitar.TabIndex = 4;
             this.Solicitar.Text = "Solicitar";
+            // 
+            // txtcli
+            // 
+            this.txtcli.Location = new System.Drawing.Point(287, 97);
+            this.txtcli.Name = "txtcli";
+            this.txtcli.Size = new System.Drawing.Size(80, 20);
+            this.txtcli.TabIndex = 10;
+            this.txtcli.Text = "Cliente";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 98);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePicker1.TabIndex = 11;
             // 
             // Form1
             // 
@@ -214,6 +291,8 @@
             this.DNI.PerformLayout();
             this.CodPos.ResumeLayout(false);
             this.CodPos.PerformLayout();
+            this.Generar.ResumeLayout(false);
+            this.Generar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -235,6 +314,13 @@
         private System.Windows.Forms.Button butcodpos;
         private System.Windows.Forms.TextBox txtcodpos;
         private System.Windows.Forms.TextBox txtcodposkey;
+        private System.Windows.Forms.Label lblid;
+        private System.Windows.Forms.Button butgen;
+        private System.Windows.Forms.TextBox txtcant;
+        private System.Windows.Forms.TextBox txtref;
+        private System.Windows.Forms.TextBox txtgenkey;
+        private System.Windows.Forms.TextBox txtcli;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }
 

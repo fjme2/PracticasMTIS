@@ -37,5 +37,26 @@ namespace Interpolaridad
             lbpob.Text = pob;
             lbprov.Text = prov;
         }
+
+        private void butgen_Click(object sender, EventArgs e)
+        {
+            int cantidad, id;
+            bool generado= false;
+            id = int.Parse(txtcli.Text);
+            DateTime fecha = dateTimePicker1.Value;
+            cantidad = int.Parse(txtcant.Text);
+            String referencia = txtref.Text.ToString();
+            String key = txtgenkey.Text.ToString();
+            eclipse.Pr1 gen = new eclipse.Pr1();
+            int presu = gen.generarPresupuesto(key, fecha, id, referencia, cantidad, out generado);
+            if (generado==true)
+            {
+                lblid.Text = presu.ToString();
+            }else
+            {
+                lblid.Text = "ERROR";
+            }
+            
+        }
     }
 }
