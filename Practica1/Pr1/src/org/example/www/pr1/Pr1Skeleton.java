@@ -68,9 +68,15 @@ public class Pr1Skeleton {
 
 	public org.example.www.pr1.SolicitarPresupuestoResponse solicitarPresupuesto(
 			org.example.www.pr1.SolicitarPresupuesto solicitarPresupuesto) {
-		// TODO : fill this with the necessary business logic
-		throw new java.lang.UnsupportedOperationException(
-				"Please implement " + this.getClass().getName() + "#solicitarPresupuesto");
+		SolicitarPresupuestoResponse soli = new SolicitarPresupuestoResponse();
+			MySQL conectar = new MySQL();
+			conectar.MySQLConnection(user, pass, db_name);
+			if(conectar.comparegetKey(solicitarPresupuesto.getSoapKey())==true){
+				soli = conectar.consultarPieza(solicitarPresupuesto);
+			}
+			
+			return soli;
+		
 	}
 
 	/**

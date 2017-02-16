@@ -198,5 +198,28 @@ public class MySQL {
 
     	return id;
     }
+    
+    public SolicitarPresupuestoResponse consultarPieza(org.example.www.pr1.SolicitarPresupuesto solicitarPresupuesto){
+    	SolicitarPresupuestoResponse soli = new SolicitarPresupuestoResponse();
+    	try {
+    		String Query = "SELECT * FROM piezas where referencia= \""
+    				+ solicitarPresupuesto.getReferenciaPieza() + "\" and "
+    						+ "proveedor =" + solicitarPresupuesto.getIdProveedor();
+    		Statement st = Conexion.createStatement();
+    		java.sql.ResultSet resultSet;
+    		resultSet = st.executeQuery(Query);
+    		
+    		while (resultSet.next()) {
+    			soli.setDisponibilidadPieza(resultSet.getBoolean("disponibilidad"));
+    			soli.setFechaDisponibilidadPieza(resultSet.getDate("fechaDisp"));
+    			soli.setPrecioPieza(resultSet.getFloat("precio"));
+    		}
+    		
+    	}catch (SQLException ex) {
+    		JOptionPane.showMessageDialog(null, "Error en la adquisición de datos");
+        }
+    	
+    	return soli;
+    }
  
 }

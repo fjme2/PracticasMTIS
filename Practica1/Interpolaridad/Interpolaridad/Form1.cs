@@ -58,5 +58,33 @@ namespace Interpolaridad
             }
             
         }
+
+        private void butsoli_Click(object sender, EventArgs e)
+        {
+            String key = txtkeysoli.Text.ToString();
+            String referencia = txtrefsoli.Text.ToString();
+            int prov = int.Parse(txtprov.Text);
+            eclipse.Pr1 soli = new eclipse.Pr1();
+            bool disp = false;
+            DateTime fecha = new DateTime();
+            try
+            {
+                float precio = soli.solicitarPresupuesto(key, referencia, prov, out disp, out fecha);
+                lblprecio.Text = precio.ToString();
+                if (disp == true)
+                {
+                    lblfecha.Text = "Disponible!";
+                }
+                else
+                {
+                    lblfecha.Text = fecha.ToString();
+                }
+            }catch(Exception ex)
+            {
+                lblprecio.Text = "ERROR";
+                lblfecha.Text = "ERROR";
+            }
+           
+        }
     }
 }

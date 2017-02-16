@@ -42,18 +42,25 @@
             this.txtcodpos = new System.Windows.Forms.TextBox();
             this.txtcodposkey = new System.Windows.Forms.TextBox();
             this.Generar = new System.Windows.Forms.TabPage();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txtcli = new System.Windows.Forms.TextBox();
             this.lblid = new System.Windows.Forms.Label();
             this.butgen = new System.Windows.Forms.Button();
             this.txtcant = new System.Windows.Forms.TextBox();
             this.txtref = new System.Windows.Forms.TextBox();
             this.txtgenkey = new System.Windows.Forms.TextBox();
             this.Solicitar = new System.Windows.Forms.TabPage();
-            this.txtcli = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblfecha = new System.Windows.Forms.Label();
+            this.lblprecio = new System.Windows.Forms.Label();
+            this.butsoli = new System.Windows.Forms.Button();
+            this.txtprov = new System.Windows.Forms.TextBox();
+            this.txtrefsoli = new System.Windows.Forms.TextBox();
+            this.txtkeysoli = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.DNI.SuspendLayout();
             this.CodPos.SuspendLayout();
             this.Generar.SuspendLayout();
+            this.Solicitar.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -207,6 +214,23 @@
             this.Generar.TabIndex = 3;
             this.Generar.Text = "Generar";
             // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(72, 98);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
+            this.dateTimePicker1.TabIndex = 11;
+            // 
+            // txtcli
+            // 
+            this.txtcli.Location = new System.Drawing.Point(287, 97);
+            this.txtcli.Name = "txtcli";
+            this.txtcli.Size = new System.Drawing.Size(80, 20);
+            this.txtcli.TabIndex = 10;
+            this.txtcli.Text = "Cliente";
+            // 
             // lblid
             // 
             this.lblid.AutoSize = true;
@@ -255,28 +279,71 @@
             // Solicitar
             // 
             this.Solicitar.BackColor = System.Drawing.Color.SteelBlue;
+            this.Solicitar.Controls.Add(this.lblfecha);
+            this.Solicitar.Controls.Add(this.lblprecio);
+            this.Solicitar.Controls.Add(this.butsoli);
+            this.Solicitar.Controls.Add(this.txtprov);
+            this.Solicitar.Controls.Add(this.txtrefsoli);
+            this.Solicitar.Controls.Add(this.txtkeysoli);
             this.Solicitar.Location = new System.Drawing.Point(4, 22);
             this.Solicitar.Name = "Solicitar";
             this.Solicitar.Size = new System.Drawing.Size(449, 269);
             this.Solicitar.TabIndex = 4;
             this.Solicitar.Text = "Solicitar";
             // 
-            // txtcli
+            // lblfecha
             // 
-            this.txtcli.Location = new System.Drawing.Point(287, 97);
-            this.txtcli.Name = "txtcli";
-            this.txtcli.Size = new System.Drawing.Size(80, 20);
-            this.txtcli.TabIndex = 10;
-            this.txtcli.Text = "Cliente";
+            this.lblfecha.AutoSize = true;
+            this.lblfecha.Location = new System.Drawing.Point(272, 133);
+            this.lblfecha.Name = "lblfecha";
+            this.lblfecha.Size = new System.Drawing.Size(37, 13);
+            this.lblfecha.TabIndex = 13;
+            this.lblfecha.Text = "Fecha";
             // 
-            // dateTimePicker1
+            // lblprecio
             // 
-            this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(72, 98);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(140, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.lblprecio.AutoSize = true;
+            this.lblprecio.Location = new System.Drawing.Point(146, 133);
+            this.lblprecio.Name = "lblprecio";
+            this.lblprecio.Size = new System.Drawing.Size(37, 13);
+            this.lblprecio.TabIndex = 11;
+            this.lblprecio.Text = "Precio";
+            // 
+            // butsoli
+            // 
+            this.butsoli.Location = new System.Drawing.Point(265, 102);
+            this.butsoli.Name = "butsoli";
+            this.butsoli.Size = new System.Drawing.Size(75, 20);
+            this.butsoli.TabIndex = 10;
+            this.butsoli.Text = "Buscar";
+            this.butsoli.UseVisualStyleBackColor = true;
+            this.butsoli.Click += new System.EventHandler(this.butsoli_Click);
+            // 
+            // txtprov
+            // 
+            this.txtprov.Location = new System.Drawing.Point(103, 102);
+            this.txtprov.Name = "txtprov";
+            this.txtprov.Size = new System.Drawing.Size(100, 20);
+            this.txtprov.TabIndex = 9;
+            this.txtprov.Text = "Proveedor";
+            // 
+            // txtrefsoli
+            // 
+            this.txtrefsoli.Location = new System.Drawing.Point(79, 76);
+            this.txtrefsoli.Name = "txtrefsoli";
+            this.txtrefsoli.Size = new System.Drawing.Size(295, 20);
+            this.txtrefsoli.TabIndex = 8;
+            this.txtrefsoli.Text = "Referencia";
+            this.txtrefsoli.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtkeysoli
+            // 
+            this.txtkeysoli.Location = new System.Drawing.Point(79, 50);
+            this.txtkeysoli.Name = "txtkeysoli";
+            this.txtkeysoli.Size = new System.Drawing.Size(295, 20);
+            this.txtkeysoli.TabIndex = 7;
+            this.txtkeysoli.Text = "Key";
+            this.txtkeysoli.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // Form1
             // 
@@ -285,7 +352,7 @@
             this.ClientSize = new System.Drawing.Size(458, 296);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "MTIS Practica 1";
             this.tabControl1.ResumeLayout(false);
             this.DNI.ResumeLayout(false);
             this.DNI.PerformLayout();
@@ -293,6 +360,8 @@
             this.CodPos.PerformLayout();
             this.Generar.ResumeLayout(false);
             this.Generar.PerformLayout();
+            this.Solicitar.ResumeLayout(false);
+            this.Solicitar.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -321,6 +390,12 @@
         private System.Windows.Forms.TextBox txtgenkey;
         private System.Windows.Forms.TextBox txtcli;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblfecha;
+        private System.Windows.Forms.Label lblprecio;
+        private System.Windows.Forms.Button butsoli;
+        private System.Windows.Forms.TextBox txtprov;
+        private System.Windows.Forms.TextBox txtrefsoli;
+        private System.Windows.Forms.TextBox txtkeysoli;
     }
 }
 
