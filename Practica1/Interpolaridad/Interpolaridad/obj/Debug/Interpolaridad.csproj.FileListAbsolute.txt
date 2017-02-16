@@ -7,3 +7,12 @@ c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolarida
 c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.csproj.GenerateResource.Cache
 c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.exe
 c:\users\fran\documents\visual studio 2015\Projects\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.pdb
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\bin\Debug\Interpolaridad.exe.config
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.exe
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.pdb
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\bin\Debug\Interpolaridad.exe
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\bin\Debug\Interpolaridad.pdb
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.csprojResolveAssemblyReference.cache
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.Form1.resources
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.Properties.Resources.resources
+D:\MTIS\PracticasMTIS\Practica1\Interpolaridad\Interpolaridad\obj\Debug\Interpolaridad.csproj.GenerateResource.Cache

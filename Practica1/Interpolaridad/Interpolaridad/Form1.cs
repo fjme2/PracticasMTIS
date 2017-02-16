@@ -86,5 +86,15 @@ namespace Interpolaridad
             }
            
         }
+
+        private void butiban_Click(object sender, EventArgs e)
+        {
+            String key = txtkeyiban.Text.ToString();
+            String iban = txtiban.Text.ToString();
+            String mensaje = "";
+            eclipse.Pr1 comprobar = new eclipse.Pr1();
+            bool correcto = comprobar.ValidarIBAN(iban, key, out mensaje);
+            lbliban.Text = mensaje;
+        }
     }
 }

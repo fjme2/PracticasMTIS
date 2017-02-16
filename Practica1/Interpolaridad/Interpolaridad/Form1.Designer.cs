@@ -56,8 +56,13 @@
             this.txtprov = new System.Windows.Forms.TextBox();
             this.txtrefsoli = new System.Windows.Forms.TextBox();
             this.txtkeysoli = new System.Windows.Forms.TextBox();
+            this.txtiban = new System.Windows.Forms.TextBox();
+            this.txtkeyiban = new System.Windows.Forms.TextBox();
+            this.butiban = new System.Windows.Forms.Button();
+            this.lbliban = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.DNI.SuspendLayout();
+            this.IBAN.SuspendLayout();
             this.CodPos.SuspendLayout();
             this.Generar.SuspendLayout();
             this.Solicitar.SuspendLayout();
@@ -132,6 +137,10 @@
             // IBAN
             // 
             this.IBAN.BackColor = System.Drawing.Color.SteelBlue;
+            this.IBAN.Controls.Add(this.lbliban);
+            this.IBAN.Controls.Add(this.butiban);
+            this.IBAN.Controls.Add(this.txtiban);
+            this.IBAN.Controls.Add(this.txtkeyiban);
             this.IBAN.Location = new System.Drawing.Point(4, 22);
             this.IBAN.Name = "IBAN";
             this.IBAN.Padding = new System.Windows.Forms.Padding(3);
@@ -345,6 +354,42 @@
             this.txtkeysoli.Text = "Key";
             this.txtkeysoli.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // txtiban
+            // 
+            this.txtiban.Location = new System.Drawing.Point(74, 83);
+            this.txtiban.Name = "txtiban";
+            this.txtiban.Size = new System.Drawing.Size(295, 20);
+            this.txtiban.TabIndex = 3;
+            this.txtiban.Text = "IBAN";
+            this.txtiban.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtkeyiban
+            // 
+            this.txtkeyiban.Location = new System.Drawing.Point(74, 50);
+            this.txtkeyiban.Name = "txtkeyiban";
+            this.txtkeyiban.Size = new System.Drawing.Size(295, 20);
+            this.txtkeyiban.TabIndex = 2;
+            this.txtkeyiban.Text = "Key";
+            this.txtkeyiban.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // butiban
+            // 
+            this.butiban.Location = new System.Drawing.Point(181, 118);
+            this.butiban.Name = "butiban";
+            this.butiban.Size = new System.Drawing.Size(75, 23);
+            this.butiban.TabIndex = 4;
+            this.butiban.Text = "Comprobar";
+            this.butiban.UseVisualStyleBackColor = true;
+            this.butiban.Click += new System.EventHandler(this.butiban_Click);
+            // 
+            // lbliban
+            // 
+            this.lbliban.AutoSize = true;
+            this.lbliban.Location = new System.Drawing.Point(202, 162);
+            this.lbliban.Name = "lbliban";
+            this.lbliban.Size = new System.Drawing.Size(0, 13);
+            this.lbliban.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -356,6 +401,8 @@
             this.tabControl1.ResumeLayout(false);
             this.DNI.ResumeLayout(false);
             this.DNI.PerformLayout();
+            this.IBAN.ResumeLayout(false);
+            this.IBAN.PerformLayout();
             this.CodPos.ResumeLayout(false);
             this.CodPos.PerformLayout();
             this.Generar.ResumeLayout(false);
@@ -396,6 +443,10 @@
         private System.Windows.Forms.TextBox txtprov;
         private System.Windows.Forms.TextBox txtrefsoli;
         private System.Windows.Forms.TextBox txtkeysoli;
+        private System.Windows.Forms.Label lbliban;
+        private System.Windows.Forms.Button butiban;
+        private System.Windows.Forms.TextBox txtiban;
+        private System.Windows.Forms.TextBox txtkeyiban;
     }
 }
 
