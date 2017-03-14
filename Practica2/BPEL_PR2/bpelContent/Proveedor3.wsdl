@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.example.org/Proveedor3/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Proveedor3" targetNamespace="http://www.example.org/Proveedor3/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.example.org/Proveedor3/">
+      <xsd:element name="solicitarPresupuesto">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="referenciaProducto" type="xsd:string" />
+          	<xsd:element name="numeroUnidades" type="xsd:int"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="solicitarPresupuestoResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="precio" type="xsd:float" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ordenarCompra">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="referenciaProducto" type="xsd:string"></xsd:element>
+      			<xsd:element name="numeroUnidades" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ordenarCompraResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="ordenado" type="xsd:boolean"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="actualizarStock">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="referenciaProducto"
+      				type="xsd:string">
+      			</xsd:element>
+      			<xsd:element name="numeroUnidades" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="actualizarStockResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="actualiza" type="xsd:boolean"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="solicitarPresupuestoRequest">
+    <wsdl:part element="tns:solicitarPresupuesto" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="solicitarPresupuestoResponse">
+    <wsdl:part element="tns:solicitarPresupuestoResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="ordenarCompraRequest">
+  	<wsdl:part name="parameters" element="tns:ordenarCompra"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ordenarCompraResponse">
+  	<wsdl:part name="parameters" element="tns:ordenarCompraResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="actualizarStockRequest">
+  	<wsdl:part name="parameters" element="tns:actualizarStock"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="actualizarStockResponse">
+  	<wsdl:part name="parameters" element="tns:actualizarStockResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Proveedor3">
+    <wsdl:operation name="solicitarPresupuesto">
+      <wsdl:input message="tns:solicitarPresupuestoRequest"/>
+      <wsdl:output message="tns:solicitarPresupuestoResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="ordenarCompra">
+    	<wsdl:input message="tns:ordenarCompraRequest"></wsdl:input>
+    	<wsdl:output message="tns:ordenarCompraResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="actualizarStock">
+    	<wsdl:input message="tns:actualizarStockRequest"></wsdl:input>
+    	<wsdl:output message="tns:actualizarStockResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Proveedor3SOAP" type="tns:Proveedor3">
+
+  	<soap:binding style="document"
+  		transport="http://schemas.xmlsoap.org/soap/http" />
+  	<wsdl:operation name="solicitarPresupuesto">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/Proveedor3/solicitarPresupuesto" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="ordenarCompra">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/Proveedor3/ordenarCompra" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  	<wsdl:operation name="actualizarStock">
+
+  		<soap:operation
+  			soapAction="http://www.example.org/Proveedor3/actualizarStock" />
+  		<wsdl:input>
+
+  			<soap:body use="literal" />
+  		</wsdl:input>
+  		<wsdl:output>
+
+  			<soap:body use="literal" />
+  		</wsdl:output>
+  	</wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Proveedor3">
+    <wsdl:port binding="tns:Proveedor3SOAP" name="Proveedor3SOAP">
+      <soap:address location="http://localhost:9080/Pr2_Proveedor3/services/Proveedor3"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

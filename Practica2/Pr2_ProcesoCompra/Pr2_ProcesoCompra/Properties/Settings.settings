@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Pr2_ProcesoCompra.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Pr2_ProcesoCompra_ProcesoCompra_Almacen" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9080/Pr2_Almacen/services/Almacen</Value>
+    </Setting>
+    <Setting Name="Pr2_ProcesoCompra_ProcesoCompra_Proveedor3" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9080/Pr2_Proveedor3/services/Proveedor3</Value>
+    </Setting>
+    <Setting Name="Pr2_ProcesoCompra_ProcesoCompra_Proveedor1" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9080/Pr2_Proveedor1/services/Proveedor1</Value>
+    </Setting>
+    <Setting Name="Pr2_ProcesoCompra_ProcesoCompra_Proveedor2" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:9080/Pr2_Proveedor2/services/Proveedor2</Value>
+    </Setting>
+    <Setting Name="Pr2_ProcesoCompra_ProcesoCompra_ProcesoCompraService" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">http://localhost:8080/ode/processes/ProcesoCompra</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

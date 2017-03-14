@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:8080/ode/deployment/bundles/BPEL_PR2/Proveedor1.wsdl" filename="Proveedor1.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:8080/ode/deployment/bundles/BPEL_PR2/Proveedor3.wsdl" filename="Proveedor3.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:8080/ode/deployment/bundles/BPEL_PR2/Almacen.wsdl" filename="Almacen.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:8080/ode/deployment/bundles/BPEL_PR2/Proveedor2.wsdl" filename="Proveedor2.wsdl" />
+    <DiscoveryClientResult referenceType="System.Web.Services.Discovery.ContractReference" url="http://localhost:8080/ode/deployment/bundles/BPEL_PR2/ProcesoCompraArtifacts.wsdl" filename="ProcesoCompra.wsdl" />
+  </Results>
+</DiscoveryClientResultsFile>
