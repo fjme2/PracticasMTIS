@@ -1,9 +1,5 @@
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\bin\Debug\Pr2_ProcesoCompra.exe.config
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\bin\Debug\Pr2_ProcesoCompra.exe
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\bin\Debug\Pr2_ProcesoCompra.pdb
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.csprojResolveAssemblyReference.cache
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.Form1.resources
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.Properties.Resources.resources
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.csproj.GenerateResource.Cache
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.exe
-D:\MTIS\PracticasMTIS\Practica2\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.pdb
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Pr2_ProcesoCompra\Pr2_ProcesoCompra\bin\Debug\Pr2_ProcesoCompra.exe.config
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.csprojResolveAssemblyReference.cache
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.Form1.resources
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.Properties.Resources.resources
+C:\Users\Fran\Documents\Visual Studio 2015\Projects\Pr2_ProcesoCompra\Pr2_ProcesoCompra\obj\Debug\Pr2_ProcesoCompra.csproj.GenerateResource.Cache
