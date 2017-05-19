@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:ws="http://www.mulesoft.org/schema/mule/ws" xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:tracking="http://www.mulesoft.org/schema/mule/ee/tracking" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:spring="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/tracking http://www.mulesoft.org/schema/mule/ee/tracking/current/mule-tracking-ee.xsd
+http://www.mulesoft.org/schema/mule/ws http://www.mulesoft.org/schema/mule/ws/current/mule-ws.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd">
+    <http:listener-config name="HTTP_Listener_Configuration" host="localhost" port="9090" doc:name="HTTP Listener Configuration"/>
+    <ws:consumer-config name="Web_Service_Consumer" service="ProcesoCompraService" port="ProcesoCompraPort" serviceAddress="http://localhost:8080/ode/processes/ProcesoCompra" wsdlLocation="http://localhost:8080/ode/deployment/bundles/BPEL_PR2/ProcesoCompraArtifacts.wsdl" doc:name="Web Service Consumer"/>
+    <db:mysql-config name="MySQL_Configuration" host="localhost" port="3306" user="root" database="flujo1" doc:name="MySQL Configuration"/>
+    <http:request-config name="HTTP_Request_Configuration" protocol="HTTPS" host="catalogo.datos.ua.es" port="443" basePath="/datasets/Campus%20o%20Sedes%20de%20la%20Universidad%20de%20Alicante" doc:name="HTTP Request Configuration"/>
+    <flow name="pr4Flow">
+        <http:listener config-ref="HTTP_Listener_Configuration" path="/*" allowedMethods="GET,POST" doc:name="HTTP"/>
+        <set-variable variableName="flujoX" value="#[message.inboundProperties.'http.request.path']" doc:name="flujoX"/>
+        <choice doc:name="Choice">
+            <when expression="#[flowVars.flujoX=='/flujo1']">
+                <flow-ref name="pr4_flujo1" doc:name="pr4_flujo1"/>
+            </when>
+            <when expression="#[flowVars.flujoX=='/flujo2']">
+                <flow-ref name="pr4_flujo2" doc:name="pr4_flujo2"/>
+            </when>
+            <otherwise>
+                <set-payload value="&quot;Error&quot;" doc:name="Set Payload"/>
+            </otherwise>
+        </choice>
+    </flow>
+    <sub-flow name="pr4_flujo1">
+        <dw:transform-message metadata:id="f3b70dcb-e818-43e0-a64e-7a1830ce9412" doc:name="Transform Message">
+            <dw:input-payload mimeType="application/json"/>
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/xml
+%namespace ns0 http://procesocompra.bpel.mtis
+---
+{
+	ns0#ProcesoCompraRequest: {
+		ns0#referencia: payload.referencia,
+		ns0#cantidad: payload.cantidad
+	}
+}]]></dw:set-payload>
+        </dw:transform-message>
+        <ws:consumer config-ref="Web_Service_Consumer" operation="process" doc:name="Web Service Consumer"/>
+        <dw:transform-message metadata:id="bbc01bb7-832a-4e11-bf0d-64abf47c9e5e" doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+%namespace ns0 http://procesocompra.bpel.mtis
+---
+payload.ns0#ProcesoCompraResponse.ns0#funciona]]></dw:set-payload>
+        </dw:transform-message>
+        <set-variable variableName="salida" value="#[payload]" doc:name="Variable"/>
+        <db:insert config-ref="MySQL_Configuration" doc:name="Database">
+            <db:parameterized-query><![CDATA[Insert into flujo1 (salida) values (#[flowVars.salida])]]></db:parameterized-query>
+        </db:insert>
+        <dw:transform-message metadata:id="822d921a-b4ca-4d6e-8e66-6604b6185361" doc:name="Transform Message">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/json
+---
+{
+	resultado: flowVars.salida
+}]]></dw:set-payload>
+        </dw:transform-message>
+        <set-payload value="#[payload]" doc:name="Set Payload"/>
+    </sub-flow>
+    <sub-flow name="pr4_flujo2">
+        <http:request config-ref="HTTP_Request_Configuration" path="/Campus%20o%20Sedes%20de%20la%20Universidad%20de%20Alicante.json" method="GET" doc:name="HTTP"/>
+        <file:outbound-endpoint path="C:\Users\Fran\Desktop" outputPattern="prac4.json" responseTimeout="10000" doc:name="File"/>
+        <component class="pr4.Flujo2" doc:name="Java"/>
+        <variable-transformer doc:name="Variable"/>
+        <set-payload value="#[payload]" doc:name="Set Payload"/>
+    </sub-flow>
+</mule>
