@@ -1,0 +1,15 @@
+{
+  "name": "mtis_rest",
+  "version": "0.0.0",
+  "description": "MTIS_Rest",
+  "main": "app.js",
+  "author": {
+    "name": "Fran"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mysqli": "^2.0.0",
+    "nodemon": "^1.11.0"
+  }
+}
